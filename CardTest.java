@@ -182,9 +182,9 @@ public class CardTest extends TestCase {
     Card c1 = new Card(1, 2, 3, 1);
     Card c2 = new Card(1, 2, 3, 3);
     Card c3 = new Card(1, 2, 3, 2);
-    assertTrue(c1.isSet(c2, c3));
-    assertTrue(c2.isSet(c1, c3));
-    assertTrue(c3.isSet(c2, c1));
+    assertTrue(Card.isSet(c1, c2, c3));
+    assertTrue(Card.isSet(c2, c1, c3));
+    assertTrue(Card.isSet(c3, c2, c1));
   }
   
   public void testIsSetDiffSameSameDiff()
@@ -193,9 +193,9 @@ public class CardTest extends TestCase {
     Card c1 = new Card(1, 2, 3, 1);
     Card c2 = new Card(2, 2, 3, 3);
     Card c3 = new Card(3, 2, 3, 2);
-    assertTrue(c1.isSet(c2, c3));
-    assertTrue(c2.isSet(c1, c3));
-    assertTrue(c3.isSet(c2, c1));
+    assertTrue(Card.isSet(c1, c2, c3));
+    assertTrue(Card.isSet(c2, c1, c3));
+    assertTrue(Card.isSet(c3, c2, c1));
   }
   
   public void testIsSetDiffDiffSameDiff()
@@ -204,9 +204,9 @@ public class CardTest extends TestCase {
     Card c1 = new Card(1, 3, 3, 1);
     Card c2 = new Card(3, 2, 3, 3);
     Card c3 = new Card(2, 1, 3, 2);
-    assertTrue(c1.isSet(c2, c3));
-    assertTrue(c2.isSet(c1, c3));
-    assertTrue(c3.isSet(c2, c1));
+    assertTrue(Card.isSet(c1, c2, c3));
+    assertTrue(Card.isSet(c2, c1, c3));
+    assertTrue(Card.isSet(c3, c2, c1));
   }
   
   public void testSetDiffDiffDiffDiff()
@@ -215,9 +215,9 @@ public class CardTest extends TestCase {
     Card c1 = new Card(1, 2, 3, 1);
     Card c2 = new Card(2, 3, 2, 3);
     Card c3 = new Card(3, 1, 1, 2);
-    assertTrue(c1.isSet(c2, c3));
-    assertTrue(c2.isSet(c1, c3));
-    assertTrue(c3.isSet(c2, c1));
+    assertTrue(Card.isSet(c1, c2, c3));
+    assertTrue(Card.isSet(c2, c1, c3));
+    assertTrue(Card.isSet(c3, c2, c1));
   }
   
   public void testNoSetQuantity()
@@ -226,9 +226,9 @@ public class CardTest extends TestCase {
     Card c1 = new Card(1, 1, 1, 1);
     Card c2 = new Card(1, 2, 1, 1);
     Card c3 = new Card(2, 3, 1, 1);
-    assertFalse(c1.isSet(c2, c3));
-    assertFalse(c2.isSet(c3, c1));
-    assertFalse(c3.isSet(c2, c1));
+    assertFalse(Card.isSet(c1, c2, c3));
+    assertFalse(Card.isSet(c2, c3, c1));
+    assertFalse(Card.isSet(c3, c2, c1));
   }
   
   public void testNoSetColor()
@@ -237,9 +237,9 @@ public class CardTest extends TestCase {
     Card c1 = new Card(1, 1, 1, 1);
     Card c2 = new Card(1, 2, 1, 1);
     Card c3 = new Card(1, 2, 1, 1);
-    assertFalse(c1.isSet(c2, c3));
-    assertFalse(c2.isSet(c3, c1));
-    assertFalse(c3.isSet(c2, c1));
+    assertFalse(Card.isSet(c1, c2, c3));
+    assertFalse(Card.isSet(c2, c3, c1));
+    assertFalse(Card.isSet(c3, c2, c1));
   }
   
   public void testNoSetShading()
@@ -248,9 +248,9 @@ public class CardTest extends TestCase {
     Card c1 = new Card(1, 1, 1, 1);
     Card c2 = new Card(1, 2, 1, 1);
     Card c3 = new Card(1, 3, 2, 1);
-    assertFalse(c1.isSet(c2, c3));
-    assertFalse(c2.isSet(c3, c1));
-    assertFalse(c3.isSet(c2, c1));
+    assertFalse(Card.isSet(c1, c2, c3));
+    assertFalse(Card.isSet(c2, c3, c1));
+    assertFalse(Card.isSet(c3, c2, c1));
   }
   
   public void testNoSetShape()
@@ -259,9 +259,9 @@ public class CardTest extends TestCase {
     Card c1 = new Card(1, 1, 1, 1);
     Card c2 = new Card(1, 2, 1, 1);
     Card c3 = new Card(1, 3, 1, 2);
-    assertFalse(c1.isSet(c2, c3));
-    assertFalse(c2.isSet(c3, c1));
-    assertFalse(c3.isSet(c2, c1));
+    assertFalse(Card.isSet(c1, c2, c3));
+    assertFalse(Card.isSet(c2, c3, c1));
+    assertFalse(Card.isSet(c3, c2, c1));
   }
   
   public void testNoSetAllAttribs()
@@ -270,9 +270,9 @@ public class CardTest extends TestCase {
     Card c1 = new Card(2, 2, 2, 2);
     Card c2 = new Card(1, 2, 1, 1);
     Card c3 = new Card(1, 3, 1, 2);
-    assertFalse(c1.isSet(c2, c3));
-    assertFalse(c2.isSet(c3, c1));
-    assertFalse(c3.isSet(c2, c1));
+    assertFalse(Card.isSet(c1, c2, c3));
+    assertFalse(Card.isSet(c2, c3, c1));
+    assertFalse(Card.isSet(c3, c2, c1));
   }
   
   public void testToString()
