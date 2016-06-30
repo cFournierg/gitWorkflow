@@ -64,12 +64,12 @@ public class Card
     return shape;
   }
   
-  public boolean isSet(Card c2, Card c3)
+  public static boolean isSet(Card c1, Card c2, Card c3)
   {
-    int quantitySum = quantity + c2.getQuantity() + c3.getQuantity();
-    int colorSum = color + c2.getColor() + c3.getColor();
-    int shadingSum = shading + c2.getShading() + c3.getShading();
-    int shapeSum = shape + c2.getShape() + c3.getShape();
+    int quantitySum = c1.getQuantity() + c2.getQuantity() + c3.getQuantity();
+    int colorSum = c1.getColor() + c2.getColor() + c3.getColor();
+    int shadingSum = c1.getShading() + c2.getShading() + c3.getShading();
+    int shapeSum = c1.getShape() + c2.getShape() + c3.getShape();
     
     return quantitySum % 3 == 0 && colorSum % 3 == 0 &&
       shadingSum % 3 == 0 && shapeSum % 3 == 0;
